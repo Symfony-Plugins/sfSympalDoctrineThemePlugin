@@ -2,14 +2,18 @@
  "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
+  <?php $ui = get_sympal_ui() ?>
+  <?php $editor = get_sympal_editor() ?>
   <?php include_http_metas() ?>
   <?php include_metas() ?>
   <?php include_title() ?>
+  <?php include_stylesheets() ?>
+  <?php include_javascripts() ?>
 </head>
 
 <body class="yui-skin-sam">
 
-  <?php echo get_sympal_ui() ?>
+  <?php echo $ui ?>
 
   <div id="wrapper">
     <div id="header">
@@ -74,7 +78,7 @@
     </div>
   </div>
 
-  <?php echo get_sympal_editor() ?>
+  <?php echo $editor ?>
 
 </body>
 </html>
