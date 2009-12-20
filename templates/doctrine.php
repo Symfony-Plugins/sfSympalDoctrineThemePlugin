@@ -34,7 +34,7 @@
     	</div>
     </div>
 
-    <?php if ($subMenu = (string) get_sympal_menu(sfSympalToolkit::getCurrentMenuItem(), true)): ?>
+    <?php if ($subMenu = (string) get_sympal_menu($sf_sympal_context->getCurrentMenuItem(), true)): ?>
       <div id="sub_menu">
         <?php echo $subMenu ?>
       </div>
