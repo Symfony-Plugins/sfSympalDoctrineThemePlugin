@@ -18,20 +18,23 @@
       <h1 id="title"><?php echo $sf_response->getTitle() ?></h1>
 
     	<div id="logo">
-    		<?php echo link_to('Sympal', '@homepage'); ?>
+          <?php echo link_to('Sympal', '@homepage'); ?>
     	</div>
     </div>
 
     <div id="nav" class="cls">
     	<div class="tl cls">
-    	  <?php $menus = get_sympal_split_menus('primary', false, 10, true) ?>
-        <?php echo $menus['primary'] ?>
+    	  &nbsp;
+          <?php $menus = get_sympal_split_menus('primary', false, 10, true) ?>
+          <?php echo $menus['primary'] ?>
 
-        <?php $menus['secondary']->callRecursively('showChildren', true) ?>
-        <?php if ($secondary = (string) $menus['secondary']): ?>
-          <?php slot('sympal_right_sidebar', $secondary.get_slot('sympal_right_sidebar')) ?>
-        <?php endif; ?>
-    	</div>
+          <?php if ($menus['secondary']): ?>
+            <?php $menus['secondary']->callRecursively('showChildren', true) ?>
+              <?php if ($secondary = (string) $menus['secondary']): ?>
+                <?php slot('sympal_right_sidebar', $secondary.get_slot('sympal_right_sidebar')) ?>
+              <?php endif; ?>
+          <?php endif; ?>	
+        </div>
     </div>
 
     <?php if ($subMenu = (string) get_sympal_menu($sf_sympal_context->getCurrentMenuItem(), true)): ?>
