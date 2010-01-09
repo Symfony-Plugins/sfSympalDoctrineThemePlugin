@@ -1,0 +1,7 @@
+all:
+  sympal_config:
+    themes:
+      doctrine:
+        layout: doctrine
+        stylesheets:
+          - /sfSympalDoctrineThemePlugin/css/doctrine.css
